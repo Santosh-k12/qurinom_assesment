@@ -47,7 +47,10 @@ class ChatListScreen extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (_) => BlocProvider(
                             create: (_) => ChatHistoryBloc(ChatRepository()),
-                            child: ChatDetailScreen(chatId: chat.id),
+                            child: ChatDetailScreen(
+                              chatId: chat.id,
+                              senderId: userId,
+                            ),
                           ),
                         ),
                       );
