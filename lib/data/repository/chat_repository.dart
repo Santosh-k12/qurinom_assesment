@@ -20,8 +20,7 @@ class ChatRepository {
   }
 
   Future<List<ChatMessage>> getChatHistory(String chatId) async {
-    final url =
-        'http://45.129.87.38:6065/messages/get-messagesformobile/$chatId';
+    final url = '$baseUrl/messages/get-messagesformobile/$chatId';
     final response = await http.get(Uri.parse(url));
 
     if (response.statusCode == 200) {
